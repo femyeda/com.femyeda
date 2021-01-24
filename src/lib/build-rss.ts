@@ -27,25 +27,29 @@ function decode(string) {
     .replace(/'/g, '&apos;')
 }
 
+const domain = 'https://femyeda.com'
+
 function mapToEntry(post) {
   return `
     <entry>
       <id>${post.link}</id>
       <title>${decode(post.title)}</title>
-      <link href="${post.link}"/>
+      <link href="${domain}${post.link}"/>
       <updated>${new Date(post.date).toJSON()}</updated>
+      <summary>
+      ${post.preview &&
+        renderToStaticMarkup(
+          (post.preview || []).map((block, idx) =>
+            textBlock(block, true, post.title + idx)
+          )
+        )}
+      <p class="more">
+        <a href="${domain}${post.link}">Read more</a>
+      </p>
+      </summary>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
-          ${renderToStaticMarkup(
-            post.preview
-              ? (post.preview || []).map((block, idx) =>
-                  textBlock(block, false, post.title + idx)
-                )
-              : post.content
-          )}
-          <p class="more">
-            <a href="${post.link}">Read more</a>
-          </p>
+          ${renderToStaticMarkup(post.content)}
         </div>
       </content>
       ${(post.authors || []).map(mapToAuthor).join('\n      ')}
@@ -58,16 +62,17 @@ function concat(total, item) {
 
 function createRSS(blogPosts = []) {
   const postsString = blogPosts.map(mapToEntry).reduce(concat, '')
-
-  return `<?xml version="1.0" encoding="utf-8"?>
-  <feed xmlns="http://www.w3.org/2005/Atom">
-    <title>My Blog</title>
-    <subtitle>Blog</subtitle>
-    <link href="/atom" rel="self" type="application/rss+xml"/>
-    <link href="/" />
-    <updated>${NOW}</updated>
-    <id>My Notion Blog</id>${postsString}
-  </feed>`
+  const atomString = `<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Femyeda</title>
+  <subtitle>Essays</subtitle>
+  <link href="${domain}/atom.xml" rel="self" type="application/rss+xml"/>
+  <link href="${domain}/" />
+  <updated>${NOW}</updated>
+  <id>${domain}</id>${postsString}
+</feed>
+`
+  return atomString
 }
 
 async function main() {
@@ -97,7 +102,7 @@ async function main() {
     post.date = post.Date
   })
 
-  const outputPath = './public/atom'
+  const outputPath = './public/atom.xml'
   await writeFile(resolve(outputPath), createRSS(blogPosts))
   console.log(`Atom feed file generated at \`${outputPath}\``)
 }

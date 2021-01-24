@@ -9,9 +9,9 @@ const navItems: { label: string; page?: string; link?: string }[] = [
   // { label: 'Follow', link: 'https://twitter.com/femyeda' },
 ]
 
-const ogImageUrl = 'https://notion-blog.now.sh/og-image.png'
+const defaultOgImageUrl = '/og-image.png'
 
-export default ({ titlePre = '' }) => {
+export default ({ titlePre = '', ogImageUrl = defaultOgImageUrl }) => {
   const { pathname } = useRouter()
 
   return (

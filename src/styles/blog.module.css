@@ -62,9 +62,14 @@
   text-align: center;
 }
 
+.postPreviewHeader {
+  display: flex;
+  flex-direction: row;
+}
+
 .postPreview {
   max-width: 600px;
-  margin: 10px auto;
+  margin: 0 auto 1.8em;
   /* border-bottom: 1px solid rgba(0, 0, 0, 0.8); */
 }
 
@@ -72,9 +77,19 @@
   border-bottom: none;
 }
 
+.postPreview a {
+  font-weight: bold;
+}
+
+.postPreview p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
 .postPreview h3,
 .post h1 {
   margin-bottom: 0;
+  margin: 0;
 }
 
 .post h1 {
@@ -116,7 +131,9 @@
 }
 
 .postPreview :global(.posted) {
-  margin-bottom: 0.5em;
+  /* margin-bottom: 0.5em; */
+  font-size: medium;
+  font-weight: lighter;
 }
 
 .post {

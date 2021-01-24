@@ -8,6 +8,8 @@ import { getBlogLink, getDateStr, postIsPublished } from '../lib/blog-helpers'
 import { textBlock } from '../lib/notion/renderers'
 import getNotionUsers from '../lib/notion/getNotionUsers'
 import getBlogIndex from '../lib/notion/getBlogIndex'
+import orderBy from 'lodash.orderby'
+import map from 'lodash.map'
 
 export async function getStaticProps({ preview }) {
   const postsTable = await getBlogIndex()
@@ -62,28 +64,24 @@ export default ({ posts = [], preview }) => {
         {posts.length === 0 && (
           <p className={blogStyles.noPosts}>There are no posts yet</p>
         )}
-        {posts.map(post => {
+        {map(orderBy(posts, ['Date'], ['desc']), post => {
           return (
             <div className={blogStyles.postPreview} key={post.Slug}>
-              <h3>
-                <Link href="/post/[slug]" as={getBlogLink(post.Slug)}>
-                  <div className={blogStyles.titleContainer}>
-                    {!post.Published && (
-                      <span className={blogStyles.draftBadge}>Draft</span>
-                    )}
-                    <a>{post.Page}</a>
-                  </div>
-                </Link>
-              </h3>
-              {post.Authors.length > 0 && (
-                <div className="authors">By: {post.Authors.join(' ')}</div>
-              )}
               {post.Date && (
-                <div className="posted">Posted: {getDateStr(post.Date)}</div>
+                <div className="posted">{getDateStr(post.Date)}</div>
               )}
+              <Link href="/post/[slug]" as={getBlogLink(post.Slug)}>
+                <div className={blogStyles.titleContainer}>
+                  {!post.Published && (
+                    <span className={blogStyles.draftBadge}>Draft</span>
+                  )}
+                  <a>{post.Page}</a>
+                </div>
+              </Link>
+              {/* <h3>
+              </h3> */}
+
               <p>
-                {(!post.preview || post.preview.length === 0) &&
-                  'No preview available'}
                 {(post.preview || []).map((block, idx) =>
                   textBlock(block, true, `${post.Slug}${idx}`)
                 )}
