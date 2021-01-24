@@ -10,15 +10,5 @@
         }
       ]
     }
-  ],
-  "build": {
-    "env": {
-      "NOTION_TOKEN": "@notion_token",
-      "BLOG_INDEX_ID": "@blog_index_id"
-    }
-  },
-  "env": {
-    "NOTION_TOKEN": "@notion_token",
-    "BLOG_INDEX_ID": "@blog_index_id"
-  }
+  ]
 }
