@@ -1,0 +1,135 @@
+@tailwind base;
+
+/* Write your own custom base styles here */
+
+/* Start purging... */
+@tailwind components;
+/* Stop purging. */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+  /* background: #f1f1f1;  */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-accent;
+  /* background: #888;  */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+html,
+body {
+  @apply bg-white dark:bg-gray-900;
+  @apply text-gray-700 dark:text-gray-300;
+  @apply min-h-screen;
+
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+blockquote {
+  @apply p-4 bg-gray-100 dark:bg-opacity-10;
+}
+
+/* Write your own custom component styles here */
+.btn-blue {
+  @apply px-4 py-2 font-bold text-white bg-blue-500 rounded;
+}
+
+.main-content {
+  scroll-margin-top: 50px;
+}
+
+.section {
+  @apply w-full;
+}
+
+@screen md {
+  .section {
+    @apply max-w-xl;
+  }
+}
+
+.quicksand {
+  font-family: "Nunito", sans-serif;
+}
+
+::selection {
+  background: #e9d8fd;
+  color: #202684;
+
+  /* WebKit/Blink Browsers */
+}
+
+::-moz-selection {
+  background: #e9d8fd;
+  color: #202684;
+  /* Gecko Browsers */
+}
+
+.scope-selection {
+}
+.scope-selection.active {
+  @apply font-bold text-accent;
+  background: linear-gradient(to right, #9f7aea, #e9d8fd);
+  background-repeat: repeat-x;
+  background-size: 100% 2px;
+  background-position: 50% 95%;
+}
+
+a:not(.nav, .scope-selection, .post-link) {
+  @apply font-semibold;
+  text-decoration: none;
+  padding: 2px;
+  background: linear-gradient(to right, #5a67d8, #5a67d8);
+  background-repeat: repeat-x;
+  background-size: 100% 2px;
+  background-position: 0 95%;
+  -webkit-transition: all 150ms ease-in-out;
+  -moz-transition: all 150ms ease-in-out;
+  -ms-transition: all 150ms ease-in-out;
+  -o-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+}
+
+a:hover {
+  color: #b794f4;
+  text-decoration: none;
+  background: linear-gradient(to right, #9f7aea, #e9d8fd);
+  background-repeat: repeat-x;
+  background-size: 100% 2px;
+  background-position: 50% 95%;
+  -webkit-transition: color 150ms ease-in-out;
+  -moz-transition: color 150ms ease-in-out;
+  -ms-transition: color 150ms ease-in-out;
+  -o-transition: color 150ms ease-in-out;
+  transition: color 150ms ease-in-out;
+}
+
+a:focus,
+a:visited {
+  outline: none;
+  background: #e9d8fd;
+}
+
+/* Start purging... */
+@tailwind utilities;
+/* Stop purging. */
+
+/* Your own custom utilities */

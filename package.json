@@ -1,0 +1,25 @@
+{
+  "name": "with-tailwindcss",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@tailwindcss/forms": "^0.2.1",
+    "clsx": "^1.1.1",
+    "date-fns": "^2.16.1",
+    "lodash": "^4.17.20",
+    "next": "latest",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-flip-move": "^3.0.4"
+  },
+  "devDependencies": {
+    "autoprefixer": "10.0.2",
+    "postcss": "8.1.7",
+    "tailwindcss": "^2.0.2"
+  },
+  "license": "MIT"
+}

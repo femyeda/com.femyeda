@@ -1,0 +1,52 @@
+{
+  "posts": [
+    {
+      "id": "texas-illinois-ohio-california-could-feed-the-planet-indefinitely",
+      "updated_at": "",
+      "created_at": "August 10, 2020",
+      "title": "Texas, Illinois, Ohio, California Could Feed The Planet Indefinitely",
+      "category": "blog",
+      "graphic": ""
+    },
+    {
+      "id": "the-individual-company-an-elaborate-oxymoron",
+      "updated_at": "",
+      "created_at": "July 26, 2020",
+      "title": "The Individual Company, An Elaborate Oxymoron",
+      "category": "blog",
+      "graphic": ""
+    },
+    {
+      "id": "a-way-with-words",
+      "updated_at": "",
+      "created_at": "July 14, 2020",
+      "title": "A way with words",
+      "category": "poetry",
+      "graphic": ""
+    },
+    {
+      "id": "introduction-to-computer-science-problem-solving",
+      "updated_at": "",
+      "created_at": "May 19, 2020",
+      "title": "Introduction to Computer Science Problem Solving",
+      "category": "blog",
+      "graphic": ""
+    },
+    {
+      "id": "from-sea-to-shining-sea",
+      "updated_at": "",
+      "created_at": "March 1, 2020",
+      "title": "From sea to shining sea",
+      "category": "poetry",
+      "graphic": ""
+    },
+    {
+      "id": "service-your-customers-like-your-life-depends-on-it",
+      "updated_at": "",
+      "created_at": "February 23, 2020",
+      "title": "Service your customers like your life depends on it",
+      "category": "blog",
+      "graphic": ""
+    }
+  ]
+}
