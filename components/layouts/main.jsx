@@ -12,7 +12,7 @@ const Main = ({ children, headerActive }) => {
 
       <Header headerActive={headerActive} />
 
-      <main className="main-content p-6 sm:py-10 md:py-16 flex flex-col flex-wrap content-center justify-center">
+      <main className="main-content p-6 flex flex-col flex-wrap content-center justify-center">
         {children}
       </main>
 

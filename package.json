@@ -14,7 +14,8 @@
     "next": "latest",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-flip-move": "^3.0.4"
+    "react-flip-move": "^3.0.4",
+    "time-ago": "^0.2.1"
   },
   "devDependencies": {
     "autoprefixer": "10.0.2",

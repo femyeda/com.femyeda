@@ -50,7 +50,6 @@ const header = () => {
           padding: 6px 10px;
           display: inline-block;
           text-decoration: none;
-          margin-right: 15px;
         }
         nav a.src {
           font-size: 13px;

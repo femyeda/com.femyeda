@@ -25,7 +25,7 @@
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }
 
 html,
@@ -84,7 +84,9 @@ blockquote {
 }
 
 .scope-selection {
+  @apply cursor-pointer;
 }
+
 .scope-selection.active {
   @apply font-bold text-accent;
   background: linear-gradient(to right, #9f7aea, #e9d8fd);
